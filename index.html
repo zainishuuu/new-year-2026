@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy New Year 2026 🎉</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .slide {
+      display: none;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .slide.active {
+      display: flex;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      max-width: 420px;
+    }
+    h1 {
+      font-size: 2.6rem;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #ffd700;
+    }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .btn {
+      margin-top: 25px;
+      padding: 12px 25px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      background: #ffd700;
+      color: #000;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background: #ffea70;
+    }
+    input {
+      padding: 10px;
+      border-radius: 20px;
+      border: none;
+      width: 80%;
+      margin-top: 15px;
+      text-align: center;
+    }
+    footer {
+      margin-top: 20px;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Slide 1 -->
+  <div class="slide active" id="slide1">
+    <div class="card">
+      <h1>🎆 Happy New Year 2026 🎆</h1>
+      <h2>Welcome to a Brand New Year</h2>
+      <p>
+        New hopes, new dreams, and new beginnings ✨<br/>
+        Let’s step into 2026 with joy and positivity.
+      </p>
+      <button class="btn" onclick="nextSlide()">Next ➡️</button>
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="slide" id="slide2">
+    <div class="card">
+      <h1>🎉 Best Wishes for 2026 🎉</h1>
+      <p>
+        May this year bring you happiness, success,
+        good health, and endless smiles.
+      </p>
+      <input id="name" placeholder="Enter your name" />
+      <br />
+      <button class="btn" onclick="showWish()">Get My Wish 🎁</button>
+      <footer id="wish"></footer>
+    </div>
+  </div>
+
+  <script>
+    function nextSlide() {
+      document.getElementById('slide1').classList.remove('active');
+      document.getElementById('slide2').classList.add('active');
+    }
+
+    function showWish() {
+      const name = document.getElementById('name').value || 'Friend';
+      document.getElementById('wish').innerText =
+        `✨ Happy New Year 2026, ${name}! May all your dreams come true ✨`;
+    }
+  </script>
+
+</body>
+</html>
